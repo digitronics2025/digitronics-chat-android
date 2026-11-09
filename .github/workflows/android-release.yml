@@ -3,8 +3,9 @@
 # website (Platform administration → Android releases). See README "Releasing".
 #
 # Runs in the protected `android-release` environment, which holds:
-#   secrets: ANDROID_KEYSTORE_B64, ANDROID_KEYSTORE_PASSWORD, ANDROID_KEY_ALIAS,
-#            ANDROID_KEY_PASSWORD, ANDROID_RELEASE_PUBLISHER_TOKEN
+#   secrets: ANDROID_KEYSTORE_B64, ANDROID_KEYSTORE_PASSWORD, ANDROID_RELEASE_PUBLISHER_TOKEN
+#            ANDROID_KEY_ALIAS, ANDROID_KEY_PASSWORD (optional: default to
+#            "digitronics-chat" and the keystore password)
 #   vars:    FIREBASE_PROJECT_ID, FIREBASE_APP_ID, FIREBASE_API_KEY, FIREBASE_SENDER_ID
 #            (optional; empty builds without push)
 #            MANIFEST_PUBLIC_KEY_X509_B64, MANIFEST_KEY_ID (optional; unset keeps the
@@ -106,8 +107,10 @@ jobs:
       - name: Test and build the signed release APK
         env:
           RELEASE_STORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
-          RELEASE_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
-          RELEASE_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+          # Optional: the production keystore is PKCS12 with alias
+          # "digitronics-chat", and PKCS12 keys share the store password.
+          RELEASE_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS || 'digitronics-chat' }}
+          RELEASE_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD || secrets.ANDROID_KEYSTORE_PASSWORD }}
           FIREBASE_PROJECT_ID: ${{ vars.FIREBASE_PROJECT_ID }}
           FIREBASE_APP_ID: ${{ vars.FIREBASE_APP_ID }}
           FIREBASE_API_KEY: ${{ vars.FIREBASE_API_KEY }}
