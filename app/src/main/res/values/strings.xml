@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- app_name comes from the build type (resValue) so debug builds are told apart. -->
+    <string name="app_display_name" translatable="false">Digitronics Chat</string>
+    <string name="app_tagline">Private team messaging for DigiTronics</string>
+    <string name="developer_name" translatable="false">Dr. BADAWI Abdalsalam</string>
+    <string name="brand_name" translatable="false">DigiTronics</string>
+    <string name="version_format">%1$s (build %2$d)</string>
+
+    <!-- Common actions -->
+    <string name="action_back">Back</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_send">Send</string>
+    <string name="error_offline">Couldn\'t reach the server. Check your connection and try again.</string>
+
+    <!-- Sign-in -->
+    <string name="signin_button">Sign in</string>
+    <string name="signin_explainer">You\'ll sign in on the Digitronics Messenger website in your browser and approve this phone. Your password never passes through the app.</string>
+    <string name="signin_completing">Finishing sign-in…</string>
+    <string name="signin_no_browser">No web browser is installed, so sign-in can\'t open. Install or enable a browser and try again.</string>
+    <string name="signin_session_ended">Your session on this phone has ended. Please sign in again.</string>
+    <string name="signin_signed_out">You signed out. This phone no longer has access.</string>
+    <string name="signin_error_expired">That sign-in took too long or was started elsewhere. Please start again.</string>
+    <string name="signin_error_state">That sign-in link didn\'t come from this app. Please start again.</string>
+    <string name="signin_error_denied">Sign-in was cancelled in the browser.</string>
+    <string name="signin_error_network">Couldn\'t reach the server to finish signing in. Check your connection and try again.</string>
+    <string name="signin_error_rejected">The server refused this sign-in. Please start again.</string>
+    <string name="signin_error_server">Something went wrong on the server. Please try again in a moment.</string>
+
+    <!-- Chat list -->
+    <string name="chats_title">Chats</string>
+    <string name="chats_loading">Loading your chats…</string>
+    <string name="chats_empty">No conversations yet.</string>
+    <string name="chats_empty_filter">Nothing here.</string>
+    <string name="chats_offline">Offline — showing saved chats. Pull down to retry.</string>
+    <string name="filter_all">All</string>
+    <string name="filter_unread">Unread</string>
+    <string name="filter_groups">Groups</string>
+    <string name="filter_bots">Bots</string>
+    <string name="label_bot">Bot</string>
+    <string name="label_group">Group</string>
+    <string name="untitled_conversation">Conversation</string>
+    <string name="notif_prompt_title">Get notified about new messages</string>
+    <string name="notif_prompt_body">Allow notifications so you know when a teammate or a bot report arrives. Message text is only shown when your phone is unlocked.</string>
+    <string name="notif_prompt_later">Not now</string>
+    <string name="notif_prompt_allow">Allow</string>
+
+    <!-- Thread -->
+    <plurals name="thread_members">
+        <item quantity="one">%1$d member</item>
+        <item quantity="other">%1$d members</item>
+    </plurals>
+    <string name="thread_bot_subtitle">Automated channel</string>
+    <string name="thread_bot_readonly">This is an automated channel. Replies aren\'t monitored.</string>
+    <string name="thread_cannot_send">You can read this conversation but not send messages in this workspace.</string>
+    <string name="thread_empty">No messages yet. Say hello.</string>
+    <string name="thread_offline">Couldn\'t refresh this conversation. Tap to retry.</string>
+    <string name="composer_hint">Message</string>
+    <string name="message_deleted">This message was deleted.</string>
+    <string name="message_sending">Sending…</string>
+    <string name="message_retry">Not sent — tap to retry</string>
+    <string name="message_discard">Discard</string>
+    <string name="attachment_image">Photo %1$s (open in the browser chat to view)</string>
+    <string name="attachment_video">Video %1$s (open in the browser chat to view)</string>
+    <string name="attachment_audio">Voice message %1$s (open in the browser chat to play)</string>
+    <string name="attachment_document">Document %1$s (open in the browser chat to view)</string>
+    <string name="attachment_location">Shared location %1$s</string>
+    <plurals name="report_rows_omitted">
+        <item quantity="one">%1$d more row not shown</item>
+        <item quantity="other">%1$d more rows not shown</item>
+    </plurals>
+
+    <!-- Notifications -->
+    <string name="channel_messages">Messages</string>
+    <string name="channel_messages_description">Messages from teammates and groups</string>
+    <string name="channel_bots">Bot reports</string>
+    <string name="channel_bots_description">Reports and alerts from DigiTronics bots</string>
+    <string name="channel_updates">App updates</string>
+    <string name="channel_updates_description">A new version of the app is available</string>
+    <string name="notification_generic_text">New message</string>
+    <string name="notification_test_title">Test notification</string>
+    <string name="notification_test_text">Notifications are working on this phone.</string>
+    <string name="notification_update_title">Update available</string>
+    <string name="notification_update_text">Version %1$s is ready to download.</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_account">Account</string>
+    <string name="settings_name">Name</string>
+    <string name="settings_email">Email</string>
+    <string name="settings_workspace">Workspace</string>
+    <string name="settings_signout">Sign out</string>
+    <string name="settings_signout_explainer">Signing out revokes this phone on the server and erases the chats saved on it.</string>
+    <string name="settings_signout_confirm">This phone will be signed out and revoked, and its saved chats erased. You can sign in again at any time.</string>
+    <string name="settings_notifications">Notifications</string>
+    <string name="notif_status_unavailable">Notifications not available in this build.</string>
+    <string name="notif_status_blocked">Off. Allow notifications to be alerted about new messages.</string>
+    <string name="notif_status_registering">On. Registering this phone with the server…</string>
+    <string name="notif_status_on">On. This phone is registered for notifications.</string>
+    <string name="notif_turn_on">Turn on</string>
+    <string name="notif_open_settings">Open system settings</string>
+    <string name="push_test_button">Send test notification</string>
+    <string name="push_test_accepted">Google accepted it. It should appear shortly — this does not prove the phone displayed it.</string>
+    <string name="push_test_token_invalid">Google rejected this phone\'s registration. Reopen the app to register again.</string>
+    <string name="push_test_no_token">This phone isn\'t registered for notifications yet.</string>
+    <string name="push_test_not_configured">Notifications aren\'t set up on the server yet.</string>
+    <string name="push_test_failed">Google didn\'t accept the test. Try again later.</string>
+    <string name="push_test_rate_limited">Too many tests. Wait a minute and try again.</string>
+    <string name="settings_appearance">Appearance</string>
+    <string name="theme_system">Follow system</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+
+    <!-- App updates -->
+    <string name="updates_title">App updates</string>
+    <string name="updates_last_checked">Last checked</string>
+    <string name="updates_check_now">Check for updates</string>
+    <string name="updates_not_configured">Update checking is not configured in this build.</string>
+    <string name="updates_never_checked">Not checked yet.</string>
+    <string name="updates_checking">Checking…</string>
+    <string name="updates_up_to_date">You have the latest version.</string>
+    <string name="updates_no_release">No version has been published yet.</string>
+    <string name="updates_unsupported">This version is no longer supported. Get the latest version from the official download page.</string>
+    <string name="updates_available">A new version is available.</string>
+    <string name="updates_offline">Couldn\'t check: no connection.</string>
+    <string name="updates_failed">Couldn\'t check for updates. Try again later.</string>
+    <string name="updates_rejected">An update offer failed this app\'s security check and was ignored. Use the official download page if you need the latest version.</string>
+    <string name="updates_rejected_expired">The last update offer has expired. Check again.</string>
+    <string name="updates_latest">Version %1$s (build %2$d)</string>
+    <string name="updates_mandatory">Required update: this version is below the minimum supported.</string>
+    <string name="updates_security">Security update</string>
+    <string name="updates_size">Download size: %1$.1f MB</string>
+    <string name="updates_whats_new">What\'s new</string>
+    <string name="updates_download">Download update</string>
+    <string name="updates_install_hint">The download opens in your browser. Android will ask you to approve the installation.</string>
+
+    <!-- About & Developer -->
+    <string name="about_title">About &amp; Developer</string>
+    <string name="about_installed_version">Installed version</string>
+    <string name="about_channel">Release channel</string>
+    <string name="channel_stable">Stable</string>
+    <string name="about_build_commit">Build</string>
+    <string name="about_developer">Developer</string>
+    <string name="about_developer_website">Developer website</string>
+    <string name="about_brand">Brand</string>
+    <string name="about_download_page">Official download page</string>
+    <string name="about_share">Share app</string>
+    <string name="about_share_summary">Shares the official download page link</string>
+    <string name="about_privacy">Privacy</string>
+    <string name="about_terms">Terms</string>
+    <string name="about_licenses">Open-source licenses</string>
+    <string name="licenses_intro">Digitronics Chat is built with these open-source libraries. Each is used under the licence shown.</string>
+
+    <!-- Diagnostics -->
+    <string name="diagnostics_title">Diagnostics</string>
+    <string name="diagnostics_summary">Copy a summary for support</string>
+    <string name="diagnostics_explainer">This summary contains the app version, Android version and connection states only — never messages, names or sign-in tokens.</string>
+    <string name="diagnostics_copy">Copy summary</string>
+    <string name="diagnostics_copied">Copied to the clipboard.</string>
+</resources>

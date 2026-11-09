@@ -1,0 +1,26 @@
+{
+  "9": "nine",
+  "10": "ten",
+  "zeta": "last",
+  "Alpha": 1,
+  "alpha": [
+    3,
+    2,
+    1,
+    {
+      "b": true,
+      "a": false,
+      "é": null
+    }
+  ],
+  "text": "Quote \" backslash \\ newline \n tab \t ctrl \u0001 \u001f del  nbsp   arabic مرحبا emoji 😀 ls  ",
+  "nested": {
+    "y": {
+      "b": [],
+      "a": {}
+    },
+    "x": -12,
+    "w": 0
+  },
+  "_under": "u"
+}
