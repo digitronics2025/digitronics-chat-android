@@ -69,6 +69,14 @@ properties, **only when all four are present**; otherwise `assembleRelease`
 produces an unsigned APK. Never commit a keystore (`*.jks`, `*.keystore` are
 ignored) or put a password in a file in this repository.
 
+The production keystore is PKCS12 (RSA 4096, alias `digitronics-chat`; the key
+shares the store password). Its only copies are two MyVault entries, the
+base64 `.jks` and its password, and the `android-release` environment secrets
+`ANDROID_KEYSTORE_B64` and `ANDROID_KEYSTORE_PASSWORD`. `ANDROID_KEY_ALIAS` and
+`ANDROID_KEY_PASSWORD` are optional and default to those. Losing it means no
+installed phone can ever take an update again: Android refuses an upgrade signed
+by another key, and so does the Worker's signer pin.
+
 ## Releasing
 
 1. Tag `vMAJOR.MINOR.PATCH` (annotated; the tag message becomes the release
