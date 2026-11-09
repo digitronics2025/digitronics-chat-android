@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Keep in step with gradle/libs.versions.toml. -->
+<resources>
+    <string-array name="license_names" translatable="false">
+        <item>Kotlin standard library</item>
+        <item>kotlinx.coroutines</item>
+        <item>kotlinx.serialization</item>
+        <item>AndroidX Core, Activity, Lifecycle</item>
+        <item>AndroidX Navigation</item>
+        <item>AndroidX Browser (Custom Tabs)</item>
+        <item>AndroidX Room</item>
+        <item>AndroidX DataStore</item>
+        <item>AndroidX WorkManager</item>
+        <item>Jetpack Compose UI and Material 3 (including Material Icons)</item>
+        <item>OkHttp</item>
+        <item>Okio</item>
+        <item>Firebase Cloud Messaging</item>
+        <item>Google Play services client libraries (used by Firebase Cloud Messaging)</item>
+    </string-array>
+    <string-array name="license_texts" translatable="false">
+        <item>Apache License 2.0 — JetBrains s.r.o. and Kotlin contributors</item>
+        <item>Apache License 2.0 — JetBrains s.r.o. and contributors</item>
+        <item>Apache License 2.0 — JetBrains s.r.o. and contributors</item>
+        <item>Apache License 2.0 — The Android Open Source Project</item>
+        <item>Apache License 2.0 — The Android Open Source Project</item>
+        <item>Apache License 2.0 — The Android Open Source Project</item>
+        <item>Apache License 2.0 — The Android Open Source Project</item>
+        <item>Apache License 2.0 — The Android Open Source Project</item>
+        <item>Apache License 2.0 — The Android Open Source Project</item>
+        <item>Apache License 2.0 — The Android Open Source Project</item>
+        <item>Apache License 2.0 — Square, Inc.</item>
+        <item>Apache License 2.0 — Square, Inc.</item>
+        <item>Apache License 2.0 — Google LLC</item>
+        <item>Android Software Development Kit License — Google LLC</item>
+    </string-array>
+</resources>

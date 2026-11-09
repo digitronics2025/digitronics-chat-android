@@ -1,0 +1,316 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "76fa9df1cc394c6cf1f42f2bf55d06be",
+    "entities": [
+      {
+        "tableName": "conversations",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`accountKey` TEXT NOT NULL, `id` TEXT NOT NULL, `isGroup` INTEGER NOT NULL, `isBot` INTEGER NOT NULL, `title` TEXT NOT NULL, `peerUserId` TEXT, `memberCount` INTEGER NOT NULL, `lastMessageAt` TEXT, `lastMessagePreview` TEXT, `lastMessageSenderId` TEXT, `lastMessageSenderName` TEXT, `unreadCount` INTEGER NOT NULL, `lastReadMessageId` TEXT, `peerLastReadMessageId` TEXT, `mutedUntil` TEXT, `updatedAt` TEXT NOT NULL, PRIMARY KEY(`accountKey`, `id`))",
+        "fields": [
+          {
+            "fieldPath": "accountKey",
+            "columnName": "accountKey",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isGroup",
+            "columnName": "isGroup",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isBot",
+            "columnName": "isBot",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "peerUserId",
+            "columnName": "peerUserId",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "memberCount",
+            "columnName": "memberCount",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastMessageAt",
+            "columnName": "lastMessageAt",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "lastMessagePreview",
+            "columnName": "lastMessagePreview",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "lastMessageSenderId",
+            "columnName": "lastMessageSenderId",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "lastMessageSenderName",
+            "columnName": "lastMessageSenderName",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "unreadCount",
+            "columnName": "unreadCount",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastReadMessageId",
+            "columnName": "lastReadMessageId",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "peerLastReadMessageId",
+            "columnName": "peerLastReadMessageId",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "mutedUntil",
+            "columnName": "mutedUntil",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "updatedAt",
+            "columnName": "updatedAt",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "accountKey",
+            "id"
+          ]
+        }
+      },
+      {
+        "tableName": "messages",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`accountKey` TEXT NOT NULL, `id` TEXT NOT NULL, `conversationId` TEXT NOT NULL, `senderId` TEXT, `senderName` TEXT, `body` TEXT NOT NULL, `messageType` TEXT NOT NULL, `systemTitle` TEXT, `systemSeverity` TEXT, `systemBlocksJson` TEXT, `mediaFileName` TEXT, `clientMessageId` TEXT, `readAt` TEXT, `deletedAt` TEXT, `createdAt` TEXT NOT NULL, PRIMARY KEY(`accountKey`, `id`))",
+        "fields": [
+          {
+            "fieldPath": "accountKey",
+            "columnName": "accountKey",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "conversationId",
+            "columnName": "conversationId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "senderId",
+            "columnName": "senderId",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "senderName",
+            "columnName": "senderName",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "body",
+            "columnName": "body",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "messageType",
+            "columnName": "messageType",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "systemTitle",
+            "columnName": "systemTitle",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "systemSeverity",
+            "columnName": "systemSeverity",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "systemBlocksJson",
+            "columnName": "systemBlocksJson",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "mediaFileName",
+            "columnName": "mediaFileName",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "clientMessageId",
+            "columnName": "clientMessageId",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "readAt",
+            "columnName": "readAt",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "deletedAt",
+            "columnName": "deletedAt",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "createdAt",
+            "columnName": "createdAt",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "accountKey",
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_messages_accountKey_conversationId_createdAt",
+            "unique": false,
+            "columnNames": [
+              "accountKey",
+              "conversationId",
+              "createdAt"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_messages_accountKey_conversationId_createdAt` ON `${TABLE_NAME}` (`accountKey`, `conversationId`, `createdAt`)"
+          }
+        ]
+      },
+      {
+        "tableName": "thread_cursors",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`accountKey` TEXT NOT NULL, `conversationId` TEXT NOT NULL, `headCursor` TEXT, `olderCursor` TEXT, `reachedStart` INTEGER NOT NULL, PRIMARY KEY(`accountKey`, `conversationId`))",
+        "fields": [
+          {
+            "fieldPath": "accountKey",
+            "columnName": "accountKey",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "conversationId",
+            "columnName": "conversationId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "headCursor",
+            "columnName": "headCursor",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "olderCursor",
+            "columnName": "olderCursor",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "reachedStart",
+            "columnName": "reachedStart",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "accountKey",
+            "conversationId"
+          ]
+        }
+      },
+      {
+        "tableName": "outgoing",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`accountKey` TEXT NOT NULL, `clientMessageId` TEXT NOT NULL, `conversationId` TEXT NOT NULL, `body` TEXT NOT NULL, `state` TEXT NOT NULL, `error` TEXT, `createdAtMillis` INTEGER NOT NULL, PRIMARY KEY(`accountKey`, `clientMessageId`))",
+        "fields": [
+          {
+            "fieldPath": "accountKey",
+            "columnName": "accountKey",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "clientMessageId",
+            "columnName": "clientMessageId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "conversationId",
+            "columnName": "conversationId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "body",
+            "columnName": "body",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "state",
+            "columnName": "state",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "error",
+            "columnName": "error",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "createdAtMillis",
+            "columnName": "createdAtMillis",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "accountKey",
+            "clientMessageId"
+          ]
+        }
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '76fa9df1cc394c6cf1f42f2bf55d06be')"
+    ]
+  }
+}

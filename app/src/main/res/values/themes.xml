@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Window theme only; every screen is drawn by the Compose Material 3 theme. -->
+    <style name="Theme.DigitronicsChat" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/splash_background</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+</resources>
