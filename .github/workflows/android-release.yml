@@ -27,6 +27,11 @@ on:
         description: "What's new (shown on the download page and in the app)"
         required: false
         default: ""
+      runner:
+        description: "Build machine: github (GitHub-hosted) or self-hosted (a registered runner labelled digitronics-android, for when hosted minutes are unavailable)"
+        type: choice
+        options: [github, self-hosted]
+        default: github
 
 permissions:
   contents: read
@@ -41,7 +46,8 @@ env:
 
 jobs:
   draft:
-    runs-on: ubuntu-latest
+    # Tag pushes have no inputs and always use GitHub-hosted Ubuntu.
+    runs-on: ${{ inputs.runner == 'self-hosted' && fromJSON('["self-hosted","digitronics-android"]') || 'ubuntu-latest' }}
     timeout-minutes: 40
     environment: android-release
     steps:

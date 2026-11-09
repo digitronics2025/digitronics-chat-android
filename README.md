@@ -94,6 +94,12 @@ by another key, and so does the Worker's signer pin.
    it through `GET /api/v1/mobile/updates/check`; the download page is
    `https://messenger.digitronics.app/install-android`.
 
+When GitHub-hosted minutes are unavailable, run the workflow by hand with
+`runner: self-hosted`. The job then goes to a registered runner labelled
+`digitronics-android`, for example an `--ephemeral` runner that takes this one
+job and unregisters. The secrets still reach only the job, never the person
+starting it.
+
 CI (`android-ci.yml`) runs unit tests, lint and a debug build on every pull
 request and push to `main`, and never publishes.
 
