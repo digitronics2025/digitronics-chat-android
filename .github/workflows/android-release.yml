@@ -81,6 +81,11 @@ jobs:
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
+        with:
+          # The default ("tools platform-tools") asks for the retired `tools`
+          # package, which sdkmanager no longer finds; the next step installs
+          # exactly what the build needs.
+          packages: ''
 
       - name: Install SDK packages
         run: sdkmanager "platform-tools" "platforms;android-35" "build-tools;35.0.0"
