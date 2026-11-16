@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "repository": "digitronics2025/digitronics-chat-android",
+  "github": {
+    "profiles": []
+  },
+  "cloudflare": {
+    "destinations": []
+  },
+  "requiredNames": []
+}
